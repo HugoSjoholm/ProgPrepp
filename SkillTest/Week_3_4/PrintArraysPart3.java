@@ -1,4 +1,4 @@
-public class PrintArrays {
+public class PrintArraysPart3 {
     public static void main(String[] args) {
         int[] intList = { 0, -12, 200, 67, 0, 0, 1, 200 };
         String[] stringList = {"Hello World", "Hur är det med dig idag?", "6", "1337", "Slutligen"};
