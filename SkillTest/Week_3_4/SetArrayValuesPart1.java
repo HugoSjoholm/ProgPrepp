@@ -21,8 +21,6 @@ public class SetArrayValuesPart1 {
         intList[3] = 999;
         PrintArray(intList);
         
-
-
     }
     
     public static void PrintArray(int[] array) {

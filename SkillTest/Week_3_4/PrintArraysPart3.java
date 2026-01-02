@@ -49,6 +49,12 @@ public class PrintArraysPart3 {
         }
         System.out.println(); 
     }
+    public static void PrintArray(char[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        System.out.println();        
+    }
     public static void PrintArray(int[][] array) {
 
         for (int x = 0; x < array.length; x++) {
