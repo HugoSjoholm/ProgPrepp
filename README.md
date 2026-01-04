@@ -10,6 +10,7 @@ Efter dem två serierna rekomenderar jag i denna ordning
   5. SandardDeviation
   6. ArrayPatterns
   7. ArrayOperator - Denna är klurig, massa små uppgifter som pop() push()
+
 Mina lösningar på dessa finns i mappen facit/
 Rekomenderar att lösa uppgifterna med den lilla bas koden som redan finns i uppgiftera. Men om du ska göra det är det vikitgt att kunna grund principderna
   - Hur man skriver java [boilderplate]([url](https://souvikpauldev.github.io/boilerplateworld/language/java.html))
