@@ -11,8 +11,8 @@ public class ArrayOperators {
         //Count(x) - number of elements with value x
         //Equals() - returns true/false if two arrays contains the same values in the same order. If they equal eachother
         //Sort() - *return* a sorted version of the array. For example, use bubble sort!
-        
         //Reverse() - Reverse the given array. 
+        
         //Push() - Append to the *end* of an array (the lenght *increases* by one)
         //Pop() - Discards *last* element (the lenght *decreases* by one)
         //Shift() - Discards *first* element (the lenght *decreases* by one)
@@ -21,23 +21,40 @@ public class ArrayOperators {
         //RemoveAt(index) - *Discards* a specific element (the lenght *decreases* by one)
         //Merge() - merge two arrays
         //Difference() - return an array containg the deffering elements between two arrays. {a,b,y,z,ä,ö} - {x,y,z,å,ä,ö} = {a,b,z,å}
-        //Shuffel() - Randomly reorganise the array withoute overwriting data
         //Subarray() - extrax a range of values from the original array. 
+        //Shuffel() - Randomly reorganise the array withoute overwriting data
         
-        int[] arr = new int[20];
+        //int[] arr = new int[20];
         int[] list3 = { 10, 25, 45, 15, 67, 69, 429, 200, -500, -300, 9999, 1337};
-        int[] list2 = { 10, -12, 200, 67, 0, 0, 1, 200, 999};
+        int[] list2 = { 10, -12, 200, 67, 0, 0, 1, 200};
         int[] list = { 10, -12, 200, 67, 0, 0, 1, 200};
 
-        //System.out.println(First(list));
-        //System.out.println(First(arr));
-
-        //System.out.println(Last(list));
-
-        //System.out.println(Sort(list));
-
-        PrintArraysPart3.PrintArray(Difference(list3, list));
         PrintArraysPart3.PrintArray(list);
+        System.out.println();
+
+        System.out.println(First(list));
+        System.out.println(Last(list));
+        System.out.println(Containes(list, 67));
+        System.out.println(IndexOf(list, 67));
+        System.out.println(Min(list));
+        System.out.println(Max(list));
+        System.out.println(Count(list, 200));
+        System.out.println(Equals(list2, list));
+
+        PrintArraysPart3.PrintArray(Sort(list));
+        PrintArraysPart3.PrintArray(Reverse(list));
+        PrintArraysPart3.PrintArray(Push(list, 99));
+        PrintArraysPart3.PrintArray(Pop(list));
+        PrintArraysPart3.PrintArray(Shift(list));
+        PrintArraysPart3.PrintArray(Unshift(list, 99));
+        PrintArraysPart3.PrintArray(InsertAt(list, 3, 99));
+        PrintArraysPart3.PrintArray(RemoveAt(list, 3));
+        PrintArraysPart3.PrintArray(Merge(list, list3));
+        PrintArraysPart3.PrintArray(Difference(list, list3));
+        PrintArraysPart3.PrintArray(Subarray(list, 2, 6));
+        PrintArraysPart3.PrintArray(Shuffel(list));
+
+
 
 
     }
@@ -248,6 +265,36 @@ public class ArrayOperators {
         }
         return shortDiff;
 
+    }
+    public static int[] Shuffel(int[] arr) {
+        
+        int[] shuffled = new int[arr.length];
+        boolean[] isFilled = new boolean[arr.length];
+        //isFilled starts filled with 0,0,...,0. when a spot is filled the corespending index in options gets set to 
+        int rnd = (int) (Math.random() * arr.length);
+        shuffled[rnd] = arr[rnd];
+        isFilled[rnd] = true;
+
+        for (int i = 1; i < arr.length; i++) {
+            rnd = (int)(Math.random()*arr.length);
+            while (isFilled[rnd] == true) {
+                //System.out.println( i + " - rnd is " + rnd + " which is " + isFilled[rnd]);
+                rnd = (int) (Math.random() * arr.length);
+            }
+            shuffled[rnd] = arr[i];
+            isFilled[rnd] = true;
+            //PrintArraysPart3.PrintArray(isFilled);
+        }
+        return shuffled;
+    }
+    public static int[] Subarray(int[] arr, int start, int end) {
+        int[] subarr = new int[end - start];
+
+        for (int i = start; i < end; i++) {
+            subarr[i - start] = arr[i]; 
+        }
+
+        return subarr;
 
     }
 }

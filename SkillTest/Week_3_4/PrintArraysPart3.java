@@ -67,4 +67,10 @@ public class PrintArraysPart3 {
         System.out.println();
 
     }
+    public static void PrintArray(boolean[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        System.out.println();
+    }
 }
