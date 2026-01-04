@@ -1,4 +1,4 @@
-public class OperatorOnArray {
+public class MathOnArray {
     public static void main(String[] args) {
         int number = Integer.parseInt(args[0]);
         char operator = args[1].charAt(0);
