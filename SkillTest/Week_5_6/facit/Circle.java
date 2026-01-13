@@ -58,7 +58,7 @@ public class Circle {
         //This is for fun.
         c2.center = new Cordinate2D(0.2f, 0.2f);
         for (int i = 0; true; i++) { //for how long will this foor loop run? what is the condiftion that will determine if it should contine running?
-            c2.color = new Color(Color.HSBtoRGB((i%3600)/360f, 1f, 1f));
+            c2.color = new Color(Color.HSBtoRGB((i%360)/360f, 1f, 1f));
             c2.draw();
         }
 
